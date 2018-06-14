@@ -1,0 +1,314 @@
+// Variables
+$font-family-sans-serif: 'Poppins', sans-serif;
+$headings-font-family: 'Oswald', sans-serif;
+$gray: #292929;
+$gold: #ba9f74;
+
+body {
+  font-family: $font-family-sans-serif;
+  cursor: default;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+    height: 100%;
+}
+
+h1, h2 {
+  font-family: $headings-font-family;
+}
+
+header {
+  position: relative;
+}
+
+.gray {
+  background: $gray;
+}
+
+#main-header {
+  max-width: 80%;
+  margin: auto;
+  position: absolute;
+  z-index: 5;
+  top: 20px;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  h1 {
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+  }
+  @at-root #primary-menu {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 20px;
+        a {
+          position: relative;
+          text-transform: uppercase;
+          color: #FFF;
+          font-weight: 500;
+          font-size: 13;
+          &:before {
+            content: '';
+            background: #FFF;
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            right: 50%;
+            display: block;
+            height: 2px;
+            width: 0;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+          }
+          &:hover,
+          &:active,
+          &:focus {
+            text-decoration: none;
+            &:before {
+              left: 0;
+              right: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#main-slider {
+  position: relative;
+  height: 100%;
+  .slide-item {
+    position: relative;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .elements-slide {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      h2, h3, p {
+        text-align: center;
+        color: #FFF;
+      }
+      h2 {
+        font-size: 18px;
+        letter-spacing: 1.2em;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      h3 {
+        font-size: 35px;
+        font-weight: 200;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+#image-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.bgwidth {
+  width: 100%;
+}
+
+.bgheight {
+  height: 100%;
+}
+
+.slick-dots {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  li {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 25px;
+    height: 3px;
+    background: rgba(255, 255, 255, .2);
+    &.slick-active {
+      background: #FFF;
+    }
+  }
+}
+
+#first {
+  position: relative;
+  img {
+    max-width: 1000px;
+    filter: saturate(1.5);
+  }
+  .wrapper-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    max-width: 500px;
+    z-index: 5;
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: .7em;
+      margin-bottom: 20px;
+      line-height: 1.2em;
+      font-weight: 700;
+      z-index: 5;
+      background: #FFF;
+      position: relative;
+      border-top: 5px solid #FFF;
+      &:before {
+        content: '';
+        background: #FFF;
+        position: absolute;
+        bottom: -25px;
+        height: 25px;
+        width: 100%;
+      }
+    }
+    p {
+      background: #FFF;
+      border-bottom: 5px solid #FFF;
+    }
+    &:before {
+      content: '';
+      border: 3px solid $gold;
+      position: absolute;
+      top: -10px;
+      right: -30px;
+      bottom: -20px;
+      left: 30px;
+      z-index: -1;
+    }
+  }
+}
+
+#guide {
+  .header-guide {
+    color: #FFF;
+    text-align: center;
+    padding-top: 7em;
+    padding-bottom: 7em;
+    h2 {
+      font-size: 24;
+      letter-spacing: .8em;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-family: $headings-font-family;
+    }
+  }
+  .content-guide {
+    .item-guide {
+      position: relative;
+      max-width: 20%;
+      float: left;
+      cursor: pointer;
+      h4 {
+        text-transform: uppercase;
+        font-size: 32px;
+        font-weight: 700;
+        font-family: $headings-font-family;
+        padding-left: 1.5em;
+        padding-top: 0.2em;
+        padding-bottom: 1.5em;
+      }
+      &:before {
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        bottom: 3px;
+        left: 3px;
+        border: 3px solid $gold;
+        opacity: 0;
+        z-index: 10;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+      }
+      .wrapper-image {
+        img {
+          height: 600px;
+          object-fit: cover;
+          filter: grayscale(1) saturate(1);
+          -webkit-transition: all .3s ease;
+          -moz-transition: all .3s ease;
+          -ms-transition: all .3s ease;
+          -o-transition: all .3s ease;
+          transition: all .3s ease;
+        }
+      }
+      &:active,
+      &:hover,
+      &:focus {
+        &:before {
+          top: 20px;
+          right: 20px;
+          bottom: 20px;
+          left: 20px;
+          opacity: 1;
+        }
+        img {
+          filter: grayscale(0) saturate(1.5);
+        }
+      }
+    }
+  }
+}
+
+#gallery {
+  max-width: 60%;
+  margin: auto;
+  .header-gallery {
+    h2 {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family:  $headings-font-family;
+      letter-spacing: .7em;
+      text-align: center;
+    }
+  }
+  .wrapper-gallery {
+    .item-gallery {
+      width: 100%;
+      max-width: 33.33%;
+      float: left;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
